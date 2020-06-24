@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style>
+    .img_block {display: inline-block; width: 30%; text-align: center;}
+    @media (max-width:1329px) {
+        .img_block {display: inline-block; width: 40%; text-align: center;}
+    }
+    @media (max-width:1000px) {
+        .img_block {display: inline-block; width: 80%; text-align: center;}
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="alert alert-danger" role="alert" style="margin-left: 140px;
+margin-right: 135px; margin-bottom: 40px;">
+  Для заказа фигуры звоните по этому номеру телефона +79206245326
+</div>
+<div style="margin-right: 80px; display: table; width: 100%;">
+    {% for i in range(1, 69) %}
+        <div class="img_block" style=""><img width="300" height="400"  style="
+        margin-left: 90px; margin-bottom: 20px; margin-right: -60px;"
+                                                 src="/static/img/figures/{{i}}.jpg">
+        <p style="margin-bottom: 50px; margin-left: 140px; text-align: center; "><b>{{names_figures[i - 1]}} - {{prices_figures[i - 1]}}₽</b></p></div>
+    {% endfor %}</div>
+{% endblock %}
